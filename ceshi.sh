@@ -27,8 +27,6 @@ read -rp "你需要TAG标签吗(Y/N): " chrony_install
         fi
         echo -e "正在安装依赖: Docker... "
         echo y | bash <(curl -L -s https://raw.githubusercontent.com/xb0or/nginx-mtproxy/main/docker.sh)
-        echo -e "正在下载nginx-mtproxy docker镜像文件 "
-        wget https://doc-0k-60-docs.googleusercontent.com/docs/securesc/877vpl42ia2d1uscu7srsen8ivv0dk51/3hbulo2qorb371or0d9cs3p2p1d9htjd/1693878600000/01335232191774239238/01335232191774239238/1EpGq2B1tPihMeX7AWW5GzYmVdC6xwBmL?e=download&ax=AH3YgiCz_c-vuTPIWa2M2X1b2M69btE-9AuMrFBWdSjJp7yTmtxCvs-SsbuOOLaAwxiI9xKDHxpMu1uPQjiMwHD49tkC3MEO79YAYy3eDhTcNc5TabRPzPBFbVZcyt6PVtQ80xGjY25odShDHTyCguMqClZF9xeZmGx2_Jy-0wUeIT8C9YAY2khQXo2Jrmr27YbncUxztYgbWM33RAszGQ5QpEEdUo5YRhH7Yj70xxsUDJ4URQmLBKJv14msAfJmTnOyop3fCQI_B9JudL6XBScSYCt80PPEAicEmuVXjkUvz8pkppq9wQyEliJLOjHPFU4NywSuG4U4kca0jesre2sIHgZ9I8f5oRVkCDlrxLqoehZxVVW8GFPV1yXi1hhyjS6BBKj63ggQpQg1QVaIufA9PNcDz4W9Zosz4fTbWd0Shm3u8ABPaMxdU8ELWMBhEME5XobERVb1yeJA4Q4hpAzJA7O2CAzbcyPsxwsbn-27010zpPw-nDrHrQoz7SCFkJHMtF5pty8WF-Je7bEPmYzYB2iwomFWvojWWV6jgySqK5bT8Ikvy5VmNtrpkKBoJuA_e0Ja7yjC50XTO4kfI7hmruLWWbzSd7RbpttQhyiV1LTe9DE4Pt-AghuYrHNjSWdX6a-7BTryUGcvIUjgdzz77cumgTdgt0G-hyrRSElM0mjggH8cC_ZF1Kfnw8NnkN6NWoNLigHZIW8L_gyRGyvjljzjTV8oiaYhx8ONfs6RC24-H4AWBH2NH6C5LXS-6OzU5cdpiNuODMxDSxGHHH5oRmVwKQYgEDv7Ps5LHgNKdO7FlC3NcROZzrPwQcj3ZP5Oe-7OLD_C1KRe1DhurDrB1Yuhp2LLRaYQXuM-BTn2ssA8cZQJLc9soUWiOHw8TLIN8kGFQmRrr83h1D8kty9cfhWA9_WX40YbcFQ&uuid=dbd9defd-00f9-4360-b5d8-a8b00e8d25ae&authuser=0
         echo -e "正在安装nginx-mtproxy... "
         docker load -i ellermister_nginx-mtproxy.tar
         docker run --name nginx-mtproxy -d -e tag="$tag" -e secret="$secret" -e domain="$domain" -p 80:80 -p $port:$port ellermister/nginx-mtproxy
