@@ -6,7 +6,7 @@ if [[ -z "${port}" ]]; then
 port="443"
 fi
 
-read -e -p "请输入前端新增白名单页面端口(默认80) :" port
+read -e -p "请输入前端新增白名单页面端口(默认80) :" wport
 if [[ -z "${wport}" ]]; then
 wport="80"
 fi
